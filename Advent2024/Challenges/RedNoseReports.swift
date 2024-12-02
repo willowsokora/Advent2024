@@ -24,16 +24,14 @@ struct RedNoseReports: AdventChallenge {
         if report[1] < report[0] {
             for i in 1..<report.count {
                 let last = report[i-1]
-                let valid = [last - 1, last - 2, last - 3]
-                if !valid.contains(report[i]) {
+                if !(last > report[i] && report[i] > last - 4) {
                     return false
                 }
             }
         } else if report[1] > report[0] {
             for i in 1..<report.count {
                 let last = report[i-1]
-                let valid = [last + 1, last + 2, last + 3]
-                if !valid.contains(report[i]) {
+                if !(last < report[i] && report[i] < last + 4) {
                     return false
                 }
             }
