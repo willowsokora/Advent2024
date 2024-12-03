@@ -13,7 +13,8 @@ func getInputText(for challengeName: String, test: Bool = false) -> String {
 
 let challenges: [any AdventChallenge] = [
     HistorianHysteria(),
-    RedNoseReports()
+    RedNoseReports(),
+    MullItOver()
 ]
 
 let testMode = false
