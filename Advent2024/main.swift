@@ -14,7 +14,8 @@ func getInputText(for challengeName: String, test: Bool = false) -> String {
 let challenges: [any AdventChallenge] = [
     HistorianHysteria(),
     RedNoseReports(),
-    MullItOver()
+    MullItOver(),
+    CeresSearch()
 ]
 
 let testMode = false
