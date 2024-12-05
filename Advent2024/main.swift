@@ -30,16 +30,21 @@ for var challenge in challenges {
         print("Challenge input not found for \(challenge.challengeName)")
         continue
     }
+    var startTime = Date.now
     challenge.parseData(input: input)
+    let parseTime = Date.now.timeIntervalSince(startTime)
     let partOne = challenge.doPartOne()
     if let partOne = partOne {
-        print("\(challenge.challengeName) - part one: \(partOne)")
+        let challengeTime = (Date.now.timeIntervalSince(startTime) + parseTime) * 1000
+        print(String(format: "%@ - part two in %.3fms: %i", challenge.challengeName, challengeTime, partOne))
     } else {
         print("\(challenge.challengeName) - part one: incomplete!")
     }
+    startTime = .now
     let partTwo = challenge.doPartTwo()
     if let partTwo = partTwo {
-        print("\(challenge.challengeName) - part two: \(partTwo)")
+        let challengeTime = (Date.now.timeIntervalSince(startTime) + parseTime) * 1000
+        print(String(format: "%@ - part two in %.3fms: %i", challenge.challengeName, challengeTime, partTwo))
     } else {
         print("\(challenge.challengeName) - part two: incomplete!")
     }
