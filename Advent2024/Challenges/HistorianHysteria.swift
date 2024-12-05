@@ -27,8 +27,8 @@ struct HistorianHysteria: AdventChallenge {
     func doPartOne() -> Int? {
         var total = 0
         for i in 0..<min(colOne.count, colTwo.count) {
-            var max = max(colOne[i], colTwo[i])
-            var min = min(colOne[i], colTwo[i])
+            let max = max(colOne[i], colTwo[i])
+            let min = min(colOne[i], colTwo[i])
             total += max - min
         }
         return total
@@ -38,7 +38,7 @@ struct HistorianHysteria: AdventChallenge {
     func doPartTwo() -> Int? {
         var total = 0
         for i in colOne {
-            var count = colTwo.count { $0 == i }
+            let count = colTwo.count { $0 == i }
             total += i * count
         }
         return total
