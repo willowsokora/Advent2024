@@ -7,15 +7,16 @@
 
 import Foundation
 
-func getInputText(for challengeName: String, test: Bool = false) -> String {
-    return try! String(contentsOfFile: "/Users/willow/dev/Advent2024/Advent2024/Inputs/\(challengeName)\(test ? "-test" : "").txt", encoding: .utf8)
+func getInputText(for challengeName: String, test: Bool = false) -> String? {
+    return try? String(contentsOfFile: "/Users/willow/dev/Advent2024/Advent2024/Inputs/\(challengeName)\(test ? "-test" : "").txt", encoding: .utf8)
 }
 
 let challenges: [any AdventChallenge] = [
     HistorianHysteria(),
     RedNoseReports(),
     MullItOver(),
-    CeresSearch()
+    CeresSearch(),
+    PrintQueue()
 ]
 
 let testMode = false
@@ -25,7 +26,10 @@ if testMode {
 }
 
 for var challenge in challenges {
-    let input = getInputText(for: challenge.challengeName, test: testMode)
+    guard let input = getInputText(for: challenge.challengeName, test: testMode) else {
+        print("Challenge input not found for \(challenge.challengeName)")
+        continue
+    }
     challenge.parseData(input: input)
     let partOne = challenge.doPartOne()
     if let partOne = partOne {
