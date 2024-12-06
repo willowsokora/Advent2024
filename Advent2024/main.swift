@@ -16,7 +16,8 @@ let challenges: [any AdventChallenge] = [
     RedNoseReports(),
     MullItOver(),
     CeresSearch(),
-    PrintQueue()
+    PrintQueue(),
+    GuardGallivant()
 ]
 
 let testMode = false
@@ -25,7 +26,7 @@ if testMode {
     print("***** Running in test mode *****\n")
 }
 
-for var challenge in challenges {
+for challenge in challenges {
     guard let input = getInputText(for: challenge.challengeName, test: testMode) else {
         print("Challenge input not found for \(challenge.challengeName)")
         continue
@@ -35,16 +36,26 @@ for var challenge in challenges {
     let parseTime = Date.now.timeIntervalSince(startTime)
     let partOne = challenge.doPartOne()
     if let partOne = partOne {
-        let challengeTime = (Date.now.timeIntervalSince(startTime) + parseTime) * 1000
-        print(String(format: "%@ - part two in %.3fms: %i", challenge.challengeName, challengeTime, partOne))
+        var timeSuffix = "s"
+        var challengeTime = (Date.now.timeIntervalSince(startTime) + parseTime)
+        if challengeTime < 1 {
+            timeSuffix = "ms"
+            challengeTime *= 1000
+        }
+        print(String(format: "%@ - part two in %.3f%@: %i", challenge.challengeName, challengeTime, timeSuffix, partOne))
     } else {
         print("\(challenge.challengeName) - part one: incomplete!")
     }
     startTime = .now
     let partTwo = challenge.doPartTwo()
     if let partTwo = partTwo {
-        let challengeTime = (Date.now.timeIntervalSince(startTime) + parseTime) * 1000
-        print(String(format: "%@ - part two in %.3fms: %i", challenge.challengeName, challengeTime, partTwo))
+        var timeSuffix = "s"
+        var challengeTime = (Date.now.timeIntervalSince(startTime) + parseTime)
+        if challengeTime < 1 {
+            timeSuffix = "ms"
+            challengeTime *= 1000
+        }
+        print(String(format: "%@ - part two in %.2f%@: %i", challenge.challengeName, challengeTime, timeSuffix, partTwo))
     } else {
         print("\(challenge.challengeName) - part two: incomplete!")
     }

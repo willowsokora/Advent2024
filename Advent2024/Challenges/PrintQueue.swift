@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PrintQueue: AdventChallenge {
+class PrintQueue: AdventChallenge {
     
     let challengeName: String = "PrintQueue"
     
@@ -15,7 +15,7 @@ struct PrintQueue: AdventChallenge {
     var correctUpdates: [[Int]] = []
     var incorrectUpdates: [[Int]] = []
     
-    mutating func parseData(input: String) {
+    func parseData(input: String) {
         let pattern = /(?:(\d+)\|(\d+))|((?:\d+,?)+)/
         for match in input.matches(of: pattern) {
             if let aStr = match.output.1, let bStr = match.output.2,

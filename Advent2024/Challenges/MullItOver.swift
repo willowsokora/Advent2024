@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct MullItOver: AdventChallenge {
+class MullItOver: AdventChallenge {
     
     let challengeName: String = "MullItOver"
     
     var mults: [(x: Int, y: Int, enabled: Bool)] = []
     
-    mutating func parseData(input: String) {
+    func parseData(input: String) {
         let pattern = /(mul\(((\d+),(\d+))\)|(do(?:n't)?)\(\))/
         var enabled = true
         for match in input.matches(of: pattern) {

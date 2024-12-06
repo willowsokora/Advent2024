@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct CeresSearch: AdventChallenge {
+class CeresSearch: AdventChallenge {
     
     let challengeName: String = "CeresSearch"
     
     var searchGrid: [[String]] = []
     
-    mutating func parseData(input: String) {
+    func parseData(input: String) {
         for line in input.split(separator: "\n") {
             searchGrid.append(line.split(separator: "").map { String($0) })
         }

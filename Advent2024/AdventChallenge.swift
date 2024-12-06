@@ -11,7 +11,7 @@ protocol AdventChallenge {
     
     var challengeName: String { get }
     
-    mutating func parseData(input: String)
+    func parseData(input: String)
     func doPartOne() -> Int?
     func doPartTwo() -> Int?
 }

@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct HistorianHysteria: AdventChallenge {
+class HistorianHysteria: AdventChallenge {
     let challengeName: String = "HistorianHysteria"
     
     var colOne: [Int] = []
     var colTwo: [Int] = []
     
-    mutating func parseData(input: String) {
+    func parseData(input: String) {
         for line in input.split(separator: "\n") {
             let numbers = line.split(separator: "   ")
             colOne.append(Int(numbers[0])!)

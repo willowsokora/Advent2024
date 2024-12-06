@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct RedNoseReports: AdventChallenge {
+class RedNoseReports: AdventChallenge {
     let challengeName: String = "RedNoseReports"
     
     var reports: [[Int]] = []
     
-    mutating func parseData(input: String) {
+    func parseData(input: String) {
         let reportLines = input.split(separator: "\n")
         for line in reportLines {
             let report = line.split(separator: " ").map { Int($0)! }
