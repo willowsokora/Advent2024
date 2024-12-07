@@ -7,11 +7,13 @@
 
 import Foundation
 
-protocol AdventChallenge {
+protocol AdventChallenge: AnyObject {
+    
+    associatedtype ResultType: FixedWidthInteger
     
     var challengeName: String { get }
     
     func parseData(input: String)
-    func doPartOne() -> Int?
-    func doPartTwo() -> Int?
+    func doPartOne() -> ResultType?
+    func doPartTwo() -> ResultType?
 }

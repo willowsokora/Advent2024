@@ -17,7 +17,8 @@ let challenges: [any AdventChallenge] = [
     MullItOver(),
     CeresSearch(),
     PrintQueue(),
-    GuardGallivant()
+    GuardGallivant(),
+    BridgeRepair()
 ]
 
 let testMode = false
@@ -42,7 +43,7 @@ for challenge in challenges {
             timeSuffix = "ms"
             challengeTime *= 1000
         }
-        print(String(format: "%@ - part two in %.3f%@: %i", challenge.challengeName, challengeTime, timeSuffix, partOne))
+        print(String(format: "%@ - part one in %.3f%@: \(partOne)", challenge.challengeName, challengeTime, timeSuffix))
     } else {
         print("\(challenge.challengeName) - part one: incomplete!")
     }
@@ -55,7 +56,7 @@ for challenge in challenges {
             timeSuffix = "ms"
             challengeTime *= 1000
         }
-        print(String(format: "%@ - part two in %.2f%@: %i", challenge.challengeName, challengeTime, timeSuffix, partTwo))
+        print(String(format: "%@ - part two in %.2f%@: \(partTwo)", challenge.challengeName, challengeTime, timeSuffix))
     } else {
         print("\(challenge.challengeName) - part two: incomplete!")
     }
