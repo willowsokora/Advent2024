@@ -77,7 +77,7 @@ struct Coordinate: Hashable {
     }
 }
 
-enum Direction: Int {
+enum Direction: Int, CaseIterable {
     case up
     case down
     case left
@@ -109,4 +109,12 @@ enum Direction: Int {
         case .left: return .up
         }
     }
+    
+    var axis: Axis {
+        return y == 0 ? .x : .y
+    }
+}
+
+enum Axis {
+    case x, y
 }

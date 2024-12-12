@@ -18,7 +18,12 @@ let challenges: [any AdventChallenge] = [
     CeresSearch(),
     PrintQueue(),
     GuardGallivant(),
-    BridgeRepair()
+    BridgeRepair(),
+    ResonantCollinearity(),
+    DiskFragmenter(),
+    HoofIt(),
+    PlutonianPebbles(),
+    GardenGroups(),
 ]
 
 let testMode = false
