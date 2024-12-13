@@ -12,18 +12,19 @@ func getInputText(for challengeName: String, test: Bool = false) -> String? {
 }
 
 let challenges: [any AdventChallenge] = [
-    HistorianHysteria(),
-    RedNoseReports(),
-    MullItOver(),
-    CeresSearch(),
-    PrintQueue(),
-    GuardGallivant(),
-    BridgeRepair(),
-    ResonantCollinearity(),
-    DiskFragmenter(),
-    HoofIt(),
-    PlutonianPebbles(),
-    GardenGroups(),
+//    HistorianHysteria(),
+//    RedNoseReports(),
+//    MullItOver(),
+//    CeresSearch(),
+//    PrintQueue(),
+//    GuardGallivant(),
+//    BridgeRepair(),
+//    ResonantCollinearity(),
+//    DiskFragmenter(),
+//    HoofIt(),
+//    PlutonianPebbles(),
+//    GardenGroups(),
+    ClawContraption(),
 ]
 
 let testMode = false
