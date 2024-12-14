@@ -24,7 +24,8 @@ let challenges: [any AdventChallenge] = [
 //    HoofIt(),
 //    PlutonianPebbles(),
 //    GardenGroups(),
-    ClawContraption(),
+//    ClawContraption(),
+    RestroomRedoubt()
 ]
 
 let testMode = false
