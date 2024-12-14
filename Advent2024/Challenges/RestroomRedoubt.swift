@@ -76,6 +76,13 @@ class RestroomRedoubt: AdventChallenge {
                 positions.insert(next)
             }
             if positions.count == robots.count {
+                var map = [[String]](repeating: [String](repeating: ".", count: width), count: height)
+                for position in positions {
+                    map[position.y][position.x] = "X"
+                }
+                for line in map {
+                    print(line.joined())
+                }
                 return i
             }
         }
